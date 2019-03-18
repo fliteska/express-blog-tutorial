@@ -1,0 +1,21 @@
+html
+    head
+        title Posts
+        link(href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', rel='stylesheet')
+    body
+        div.container
+            div.row
+                div.col-6
+                    h1 Posts
+                div.col-6.text-right
+                    a(href='/post/create', class='btn btn-primary') Create
+            div.row
+                each post in data
+                    div.col-md-4
+                        div.card
+                            div.card-body
+                                h5.card-title #{post.title}
+                                p.card-text
+                                    a(href='/post/' + post._id) View
+
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js')
